@@ -1,0 +1,150 @@
+﻿<Window x:Class="QuanLiTrongTrot.LoginWindow"
+<Window x:Class="QuanLiTrongTrot.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLiTrongTrot"
+        mc:Ignorable="d"
+        Title="Đăng nhập" Height="500" Width="850"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    
+    <Grid>
+        <!-- Ảnh nền - Thay đổi đường dẫn ảnh phù hợp với file của bạn -->
+        <Image Source="/Images/background.jpg" Stretch="UniformToFill"/>
+        
+        <!-- Form đăng nhập với hiệu ứng mờ (Glass effect) -->
+        <Border Width="320" Height="400"
+                Background="#AAFFFFFF"
+                CornerRadius="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.3"/>
+            </Border.Effect>
+            
+            <StackPanel VerticalAlignment="Center" Margin="30">
+                
+                <!-- Tiêu đề -->
+                <TextBlock Text="Quản lý Trồng Trọt"
+                           FontSize="28"
+                           FontStyle="Italic"
+                           Foreground="#2E7D32"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,30"/>
+                
+                <!-- Ô nhập tên đăng nhập -->
+                <Border Background="White" CornerRadius="25" Margin="0,10" Padding="15,12">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="🌱" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox x:Name="txtUsername" Grid.Column="1" 
+                                 BorderThickness="0" FontSize="14"
+                                 VerticalAlignment="Center"
+                                 Background="Transparent">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="">
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <VisualBrush Stretch="None" AlignmentX="Left">
+                                                        <VisualBrush.Visual>
+                                                            <TextBlock Text="Tên đăng nhập" Foreground="Gray" FontSize="14"/>
+                                                        </VisualBrush.Visual>
+                                                    </VisualBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                    </Grid>
+                </Border>
+                
+                <!-- Ô nhập mật khẩu -->
+                <Border Background="White" CornerRadius="25" Margin="0,10" Padding="15,12">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="🌱" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <PasswordBox x:Name="txtPassword" Grid.Column="1" 
+                                     BorderThickness="0" FontSize="14"
+                                     VerticalAlignment="Center"
+                                     Background="Transparent"/>
+                        <Button Grid.Column="2" Content="👁" 
+                                Background="Transparent" BorderThickness="0"
+                                Cursor="Hand" FontSize="14"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Nút Đăng nhập -->
+                <Button x:Name="btnLogin" Content="Đăng nhập"
+                        Height="45" Margin="0,20,0,10"
+                        Background="#2E7D32" Foreground="White"
+                        FontSize="16" FontWeight="SemiBold"
+                        Cursor="Hand"
+                        Click="btnLogin_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    CornerRadius="22">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                
+                <!-- Link quên mật khẩu -->
+                <TextBlock Text="Quên mật khẩu?"
+                           Foreground="#666"
+                           FontSize="12"
+                           HorizontalAlignment="Center"
+                           Margin="0,10"
+                           Cursor="Hand"/>
+                
+                <!-- Nút Đăng ký -->
+                <Button x:Name="btnRegister" Content="Đăng kí"
+                        Height="45" Margin="0,10,0,0"
+                        Background="#4CAF50" Foreground="White"
+                        FontSize="16" FontWeight="SemiBold"
+                        Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    CornerRadius="22">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                
+            </StackPanel>
+        </Border>
+        
+        <!-- Nút đóng cửa sổ -->
+        <Button Content="✕" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top"
+                Margin="10"
+                Width="30" Height="30"
+                Background="Transparent"
+                Foreground="White"
+                FontSize="16"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnClose_Click"/>
+    </Grid>
+</Window>

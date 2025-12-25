@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace QuanLiTrongTrot
+{
+    /// <summary>
+    /// Interaction logic for LoginWindow.xaml
+    /// </summary>
+    public partial class LoginWindow : Window
+    {
+        private bool _isPasswordVisible = false;
+
+        public LoginWindow()
+        {
+            InitializeComponent();
+            
+            // Cho phép kéo cửa sổ
+            this.MouseLeftButtonDown += (s, e) =>
+            {
+                if (e.LeftButton == MouseButtonState.Pressed)
+                    this.DragMove();
+            };
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!", 
+                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // TODO: Thêm logic xác thực đăng nhập ở đây
+            // Ví dụ tạm thời:
+            if (username == "admin" && password == "admin")
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", 
+                    "Lỗi đăng nhập", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Ẩn/hiện placeholder
+            txtPasswordPlaceholder.Visibility = string.IsNullOrEmpty(txtPassword.Password) 
+                ? Visibility.Visible 
+                : Visibility.Collapsed;
+        }
+
+        private void btnShowPassword_Click(object sender, RoutedEventArgs e)
+        {
+            // Hiện tại WPF PasswordBox không hỗ trợ hiển thị mật khẩu trực tiếp
+            // Có thể implement bằng cách sử dụng TextBox thay thế
+            _isPasswordVisible = !_isPasswordVisible;
+            
+            if (_isPasswordVisible)
+            {
+                // Đổi icon thành eye-off
+                eyeIcon.Data = Geometry.Parse("M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z");
+                eyeIcon.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2E7D32"));
+            }
+            else
+            {
+                // Đổi icon thành eye
+                eyeIcon.Data = Geometry.Parse("M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z");
+                eyeIcon.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9E9E9E"));
+            }
+        }
+
+        private void ForgotPassword_Click(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Vui lòng liên hệ quản trị viên để được hỗ trợ khôi phục mật khẩu.", 
+                "Quên mật khẩu", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+    }
+}
