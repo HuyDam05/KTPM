@@ -23,20 +23,18 @@ namespace QuanLiTrongTrot.View.GiongCay
         public GiongCayView()
         {
             InitializeComponent();
-            LoadGiongCayChinh(); // Mặc định load Giống cây trồng chính
+            LoadGiongCayChinh();
         }
 
-        #region Load Data Methods
+        #region Load Data Methods - PUBLIC để MainWindow gọi được
 
-        // Load Giống cây trồng chính
-        private void LoadGiongCayChinh()
+        public void LoadGiongCayChinh()
         {
             try
             {
                 _currentTable = "GiongCayChinh";
                 txtTitle.Text = "Danh sách Giống Cây Trồng Chính";
 
-                // Cập nhật columns cho DataGrid
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Tên", Binding = new System.Windows.Data.Binding("Ten"), Width = 150 });
@@ -69,15 +67,13 @@ namespace QuanLiTrongTrot.View.GiongCay
             }
         }
 
-        // Load Giống cây lưu hành
-        private void LoadGiongCayLuuHanh()
+        public void LoadGiongCayLuuHanh()
         {
             try
             {
                 _currentTable = "GiongCayLuuHanh";
                 txtTitle.Text = "Danh sách Giống Cây Lưu Hành";
 
-                // Cập nhật columns cho DataGrid
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Loại cây", Binding = new System.Windows.Data.Binding("LoaiCay"), Width = 150 });
@@ -110,15 +106,13 @@ namespace QuanLiTrongTrot.View.GiongCay
             }
         }
 
-        // Load Giống cây đầu dòng
-        private void LoadGiongCayDauDong()
+        public void LoadGiongCayDauDong()
         {
             try
             {
                 _currentTable = "GiongCayDauDong";
                 txtTitle.Text = "Danh sách Giống Cây Đầu Dòng";
 
-                // Cập nhật columns cho DataGrid
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Tên", Binding = new System.Windows.Data.Binding("Ten"), Width = 150 });
@@ -159,32 +153,14 @@ namespace QuanLiTrongTrot.View.GiongCay
 
         #region Event Handlers
 
-        private void BtnGiongCayChinh_Click(object sender, RoutedEventArgs e)
-        {
-            LoadGiongCayChinh();
-        }
-
-        private void BtnGiongCayLuuHanh_Click(object sender, RoutedEventArgs e)
-        {
-            LoadGiongCayLuuHanh();
-        }
-
-        private void BtnGiongCayDauDong_Click(object sender, RoutedEventArgs e)
-        {
-            LoadGiongCayDauDong();
-        }
-
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // TODO: Implement search functionality
-            string keyword = txtSearch.Text.ToLower();
-            // Tìm kiếm theo bảng hiện tại
+            // TODO: Implement search
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Thêm mới vào bảng: {_currentTable}", "Thông báo");
-            // TODO: Mở form thêm mới tương ứng
         }
 
         #endregion

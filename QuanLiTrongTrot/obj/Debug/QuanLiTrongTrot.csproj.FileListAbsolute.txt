@@ -21,3 +21,11 @@ E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\LoginWindow.g.cs
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\LoginWindow.baml
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\GiongCay\GiongCayView.baml
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\GiongCay\GiongCayView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\ThuocBVTV\ThuocBVTVView.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\ThuocBVTV\ThuocBVTVView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\PhanBon\PhanBonView.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\PhanBon\PhanBonView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\CoSoSanXuat\CoSoSanXuatView.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\VungTrong\VungTrongView.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\CoSoSanXuat\CoSoSanXuatView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\VungTrong\VungTrongView.g.cs

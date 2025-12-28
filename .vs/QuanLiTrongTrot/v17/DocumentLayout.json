@@ -3,20 +3,48 @@
   "WorkspaceRootPath": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\view\\giongcay\\giongcayview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\giongcay\\giongcayview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\view\\vungtrong\\vungtrongview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\vungtrong\\vungtrongview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\model\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\model\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\view\\vungtrong\\vungtrongview.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\vungtrong\\vungtrongview.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\model\\giongcay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\model\\giongcay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\model\\vungtrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\model\\vungtrong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|e:\\quanlitrongtrot\\quanlitrongtrot\\quanlitrongtrot\\view\\giongcay\\giongcayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\giongcay\\giongcayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\model\\cososanxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\model\\cososanxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\view\\cososanxuat\\cososanxuatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\cososanxuat\\cososanxuatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\view\\cososanxuat\\cososanxuatview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\cososanxuat\\cososanxuatview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\view\\phanbon\\phanbonview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\phanbon\\phanbonview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\view\\phanbon\\phanbonview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\view\\phanbon\\phanbonview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\quanlitrongtrot\\model\\phanbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09643D50-7168-4B00-9358-4D7733A56662}|QuanLiTrongTrot\\QuanLiTrongTrot.csproj|solutionrelative:quanlitrongtrot\\model\\phanbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,8 +53,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 203,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 197,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,53 +63,134 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DataProvider.cs",
-              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\DataProvider.cs",
-              "RelativeDocumentMoniker": "QuanLiTrongTrot\\model\\DataProvider.cs",
-              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\DataProvider.cs",
-              "RelativeToolTip": "QuanLiTrongTrot\\model\\DataProvider.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T02:06:54.774Z",
+              "Title": "VungTrongView.xaml",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-27T06:27:25.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CoSoSanXuatView.xaml",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-27T05:50:04.196Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GiongCayView.xaml.cs",
-              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml.cs",
-              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml.cs",
-              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml.cs",
-              "RelativeToolTip": "QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAAwL8AAAABAAAAAAAAAA==",
+              "Title": "VungTrongView.xaml.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\VungTrong\\VungTrongView.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwGAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T01:52:43.511Z",
+              "WhenOpened": "2025-12-27T05:49:51.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GiongCayView.xaml",
-              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml",
-              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml",
-              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml",
-              "RelativeToolTip": "QuanLiTrongTrot\\View\\GiongCay\\GiongCayView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-23T01:37:37.61Z",
-              "EditorCaption": ""
+              "Title": "CoSoSanXuat.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\CoSoSanXuat.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\model\\CoSoSanXuat.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\CoSoSanXuat.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\model\\CoSoSanXuat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T05:44:36.871Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GiongCay.cs",
-              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\GiongCay.cs",
-              "RelativeDocumentMoniker": "QuanLiTrongTrot\\model\\GiongCay.cs",
-              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\GiongCay.cs",
-              "RelativeToolTip": "QuanLiTrongTrot\\model\\GiongCay.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Title": "VungTrong.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\VungTrong.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\model\\VungTrong.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\VungTrong.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\model\\VungTrong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T01:36:11.438Z",
+              "WhenOpened": "2025-12-27T05:44:22.854Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PhanBonView.xaml.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T04:50:40.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PhanBonView.xaml",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\PhanBon\\PhanBonView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-27T04:50:29.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\MainWindow.xaml.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T01:29:50.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CoSoSanXuatView.xaml.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\View\\CoSoSanXuat\\CoSoSanXuatView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T05:50:11.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PhanBon.cs",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\PhanBon.cs",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\model\\PhanBon.cs",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\model\\PhanBon.cs",
+              "RelativeToolTip": "QuanLiTrongTrot\\model\\PhanBon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T04:43:28.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLiTrongTrot\\MainWindow.xaml",
+              "ToolTip": "E:\\QuanLiTrongTrot\\QuanLiTrongTrot\\QuanLiTrongTrot\\MainWindow.xaml",
+              "RelativeToolTip": "QuanLiTrongTrot\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-27T01:28:41.076Z"
             }
           ]
         }

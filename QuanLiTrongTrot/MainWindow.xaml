@@ -72,9 +72,9 @@
             <!-- SIDEBAR (Menu trái) -->
             <Border Grid.Column="0" Background="#FAFAFA" BorderBrush="#E0E0E0" BorderThickness="0,0,1,0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="0,10">
+                    <StackPanel x:Name="SidebarContent" Margin="0,10">
 
-                        <!-- Nhóm: Người dùng -->
+                            <!-- Nhóm: Người dùng -->
                         <TextBlock Text="Người dùng" FontWeight="Bold" FontSize="14" 
                                    Foreground="#333" Margin="15,10,15,5"/>
                         <Button Content="Quản lý người dùng" Style="{StaticResource SidebarButtonStyle}" 

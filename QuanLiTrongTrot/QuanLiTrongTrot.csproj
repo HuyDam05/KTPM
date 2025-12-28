@@ -58,13 +58,29 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CoSoSanXuat.cs" />
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\GiongCay.cs" />
+    <Compile Include="Model\PhanBon.cs" />
+    <Compile Include="Model\ThuocBVTV.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\VungTrong.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\CoSoSanXuat\CoSoSanXuatView.xaml.cs">
+      <DependentUpon>CoSoSanXuatView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GiongCay\GiongCayView.xaml.cs">
       <DependentUpon>GiongCayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanBon\PhanBonView.xaml.cs">
+      <DependentUpon>PhanBonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuocBVTV\ThuocBVTVView.xaml.cs">
+      <DependentUpon>ThuocBVTVView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VungTrong\VungTrongView.xaml.cs">
+      <DependentUpon>VungTrongView.xaml</DependentUpon>
     </Compile>
     <Page Include="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -85,8 +101,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CoSoSanXuat\CoSoSanXuatView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\GiongCay\GiongCayView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhanBon\PhanBonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuocBVTV\ThuocBVTVView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VungTrong\VungTrongView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
