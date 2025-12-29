@@ -49,5 +49,17 @@ namespace QuanLiTrongTrot.Model
 
             return data;
         }
+        public int ExecuteNonQuery(string query)
+        {
+            int result = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                result = command.ExecuteNonQuery();
+                connection.Close();
+            }
+            return result;
+        }
     }
 }

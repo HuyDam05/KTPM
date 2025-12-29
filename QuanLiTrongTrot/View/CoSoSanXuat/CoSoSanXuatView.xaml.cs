@@ -10,7 +10,8 @@ namespace QuanLiTrongTrot.View.CoSoSanXuat
     public partial class CoSoSanXuatView : UserControl
     {
         private string _currentTable = "CS_VG";
-        private List<CS_VG> _listCoSo;
+        private DataTable _currentData;
+        private bool _isLoading = false;
 
         public CoSoSanXuatView()
         {
@@ -24,8 +25,12 @@ namespace QuanLiTrongTrot.View.CoSoSanXuat
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "CS_VG";
                 txtTitle.Text = "Danh mục Cơ sở đủ ATTP VietGap";
+                txtSearch.Text = "";
+
+                dgCoSo.ItemsSource = null;
 
                 dgCoSo.Columns.Clear();
                 dgCoSo.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -34,33 +39,17 @@ namespace QuanLiTrongTrot.View.CoSoSanXuat
                 dgCoSo.Columns.Add(new DataGridTextColumn { Header = "Bản đồ ID", Binding = new System.Windows.Data.Binding("BanDoId"), Width = 100 });
 
                 string query = "SELECT * FROM CS_VG";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                _listCoSo = new List<CS_VG>();
-                foreach (DataRow row in data.Rows)
-                {
-                    _listCoSo.Add(new CS_VG
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"])
-                    });
-                }
-
-                dgCoSo.ItemsSource = _listCoSo;
-                txtTongSo.Text = _listCoSo.Count.ToString();
+                dgCoSo.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        public void TimKiemCoSo()
-        {
-            txtTitle.Text = "Tìm kiếm thông tin Cơ sở đủ ATTP VietGap";
-            txtSearch.Focus();
         }
 
         #endregion
@@ -69,22 +58,47 @@ namespace QuanLiTrongTrot.View.CoSoSanXuat
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (_listCoSo == null) return;
+            if (_isLoading || _currentData == null) return;
 
-            string keyword = txtSearch.Text.ToLower();
+            string keyword = txtSearch.Text.ToLower().Trim();
 
             if (string.IsNullOrEmpty(keyword))
             {
-                dgCoSo.ItemsSource = _listCoSo;
+                _currentData.DefaultView.RowFilter = "";
             }
             else
             {
-                var filtered = _listCoSo.FindAll(c =>
-                    c.Ten.ToLower().Contains(keyword) ||
-                    c.DiaChi.ToLower().Contains(keyword));
-                dgCoSo.ItemsSource = filtered;
+                string filter = BuildRowFilter(keyword);
+                try
+                {
+                    _currentData.DefaultView.RowFilter = filter;
+                }
+                catch
+                {
+                    _currentData.DefaultView.RowFilter = "";
+                }
             }
-            txtTongSo.Text = ((List<CS_VG>)dgCoSo.ItemsSource).Count.ToString();
+
+            txtTongSo.Text = _currentData.DefaultView.Count.ToString();
+        }
+
+        private string BuildRowFilter(string keyword)
+        {
+            List<string> conditions = new List<string>();
+            
+            foreach (DataColumn col in _currentData.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+                else if (col.DataType == typeof(int) || col.DataType == typeof(double))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+            }
+
+            return string.Join(" OR ", conditions);
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)

@@ -60,7 +60,8 @@
                   BorderBrush="#E0E0E0"
                   RowHeight="40"
                   SelectionMode="Single"
-                  Background="White">
+                  Background="White"
+                  MouseDoubleClick="dgGiongCay_MouseDoubleClick">
             
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
@@ -76,9 +77,32 @@
         </DataGrid>
 
         <!-- FOOTER -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBlock Text="Tổng số: " FontSize="13" Foreground="#666"/>
-            <TextBlock x:Name="txtTongSo" Text="0" FontSize="13" FontWeight="Bold" Foreground="#333"/>
-        </StackPanel>
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Tổng số bên trái -->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Tổng số: " FontSize="13" Foreground="#666"/>
+                <TextBlock x:Name="txtTongSo" Text="0" FontSize="13" FontWeight="Bold" Foreground="#333"/>
+            </StackPanel>
+            
+            <!-- Nút Xóa bên phải -->
+            <Button x:Name="btnXoa" Grid.Column="1" Content="🗑 Xóa" 
+                    Background="#F44336" Foreground="White"
+                    Padding="20,10" FontSize="13"
+                    BorderThickness="0" Cursor="Hand"
+                    Click="BtnXoa_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>

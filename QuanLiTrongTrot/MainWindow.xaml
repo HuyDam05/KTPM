@@ -54,7 +54,6 @@
                 <Button Content="Thuốc BVTV" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="ThuocBVTV"/>
                 <Button Content="Vùng Trồng" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="VungTrong"/>
                 <Button Content="Cơ Sở Sản Xuất" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="CoSoSanXuat"/>
-                <Button Content="Cơ Sở Buôn Bán" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="CoSoBuonBan"/>
                 <Button Content="Giống cây" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="GiongCay"/>
                 <Button Content="Sinh Vật Gây Hại" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="SinhVatGayHai"/>
             </StackPanel>

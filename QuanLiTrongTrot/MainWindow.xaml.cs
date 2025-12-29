@@ -3,6 +3,7 @@ using QuanLiTrongTrot.View.ThuocBVTV;
 using QuanLiTrongTrot.View.PhanBon;
 using QuanLiTrongTrot.View.VungTrong;
 using QuanLiTrongTrot.View.CoSoSanXuat;
+using QuanLiTrongTrot.View.SinhVatGayHai;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,7 @@ namespace QuanLiTrongTrot
         private PhanBonView _phanBonView;
         private VungTrongView _vungTrongView;
         private CoSoSanXuatView _coSoSanXuatView;
+        private SinhVatGayHaiView _sinhVatGayHaiView;
 
         public MainWindow()
         {
@@ -65,16 +67,9 @@ namespace QuanLiTrongTrot
                     LoadCoSoSanXuatContent();
                     break;
 
-                case "CoSoBuonBan":
-                    LoadDefaultSidebar();
-                    txtWelcome.Text = "Quản lý Cơ Sở Buôn Bán";
-                    txtWelcome.Visibility = Visibility.Visible;
-                    break;
-
                 case "SinhVatGayHai":
-                    LoadDefaultSidebar();
-                    txtWelcome.Text = "Quản lý Sinh Vật Gây Hại";
-                    txtWelcome.Visibility = Visibility.Visible;
+                    LoadSinhVatGayHaiSidebar();
+                    LoadSinhVatGayHaiContent();
                     break;
             }
         }
@@ -160,10 +155,6 @@ namespace QuanLiTrongTrot
             var btnDanhMuc = CreateSidebarButton("Quản lý danh mục vùng trồng", "DanhMucVungTrong");
             btnDanhMuc.Click += BtnDanhMucVungTrong_Click;
             SidebarContent.Children.Add(btnDanhMuc);
-
-            var btnTimKiem = CreateSidebarButton("Tìm kiếm thông tin vùng trồng", "TimKiemVungTrong");
-            btnTimKiem.Click += BtnTimKiemVungTrong_Click;
-            SidebarContent.Children.Add(btnTimKiem);
         }
 
         private void LoadCoSoSanXuatSidebar()
@@ -174,10 +165,24 @@ namespace QuanLiTrongTrot
             var btnDanhMuc = CreateSidebarButton("Quản lý danh mục cơ sở", "DanhMucCoSo");
             btnDanhMuc.Click += BtnDanhMucCoSo_Click;
             SidebarContent.Children.Add(btnDanhMuc);
+        }
 
-            var btnTimKiem = CreateSidebarButton("Tìm kiếm thông tin cơ sở", "TimKiemCoSo");
-            btnTimKiem.Click += BtnTimKiemCoSo_Click;
-            SidebarContent.Children.Add(btnTimKiem);
+        private void LoadSinhVatGayHaiSidebar()
+        {
+            SidebarContent.Children.Clear();
+            SidebarContent.Children.Add(CreateSidebarHeader("Quản lý Sinh Vật Gây Hại"));
+
+            var btnDanhMuc = CreateSidebarButton("Quản lý danh mục sinh vật gây hại", "DanhMucSVGH");
+            btnDanhMuc.Click += BtnDanhMucSVGH_Click;
+            SidebarContent.Children.Add(btnDanhMuc);
+
+            var btnCapNhat = CreateSidebarButton("Cập nhật tình hình sinh vật gây hại", "CapNhatSVGH");
+            btnCapNhat.Click += BtnCapNhatSVGH_Click;
+            SidebarContent.Children.Add(btnCapNhat);
+
+            var btnTuoiSau = CreateSidebarButton("Quản lý danh mục tuổi sâu, cấp độ phổ biến", "TuoiSau");
+            btnTuoiSau.Click += BtnTuoiSau_Click;
+            SidebarContent.Children.Add(btnTuoiSau);
         }
 
         private TextBlock CreateSidebarHeader(string text, double topMargin = 10)
@@ -259,7 +264,6 @@ namespace QuanLiTrongTrot
         }
 
         private void BtnDanhMucVungTrong_Click(object sender, RoutedEventArgs e) => _vungTrongView?.LoadVungTrong();
-        private void BtnTimKiemVungTrong_Click(object sender, RoutedEventArgs e) => _vungTrongView?.TimKiemVungTrong();
 
         #endregion
 
@@ -273,7 +277,21 @@ namespace QuanLiTrongTrot
         }
 
         private void BtnDanhMucCoSo_Click(object sender, RoutedEventArgs e) => _coSoSanXuatView?.LoadCoSoVietGap();
-        private void BtnTimKiemCoSo_Click(object sender, RoutedEventArgs e) => _coSoSanXuatView?.TimKiemCoSo();
+
+        #endregion
+
+        #region Sinh Vật Gây Hại Events
+
+        private void LoadSinhVatGayHaiContent()
+        {
+            MainContent.Children.Clear();
+            _sinhVatGayHaiView = new SinhVatGayHaiView();
+            MainContent.Children.Add(_sinhVatGayHaiView);
+        }
+
+        private void BtnDanhMucSVGH_Click(object sender, RoutedEventArgs e) => _sinhVatGayHaiView?.LoadSinhVatGayHai();
+        private void BtnCapNhatSVGH_Click(object sender, RoutedEventArgs e) => _sinhVatGayHaiView?.LoadCapNhatSVGH();
+        private void BtnTuoiSau_Click(object sender, RoutedEventArgs e) => _sinhVatGayHaiView?.LoadTuoiSau();
 
         #endregion
 

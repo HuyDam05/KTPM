@@ -10,6 +10,8 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
     public partial class ThuocBVTVView : UserControl
     {
         private string _currentTable = "ThuocBVTV";
+        private DataTable _currentData;
+        private bool _isLoading = false;
 
         public ThuocBVTVView()
         {
@@ -19,13 +21,16 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
 
         #region Load Data Methods
 
-        // Load Danh sách thuốc BVTV
         public void LoadThuocBVTV()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "ThuocBVTV";
                 txtTitle.Text = "Danh sách Thuốc Bảo Vệ Thực Vật";
+                txtSearch.Text = "";
+                
+                dgThuocBVTV.ItemsSource = null;
 
                 dgThuocBVTV.Columns.Clear();
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -35,37 +40,29 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "Vùng trồng ID", Binding = new System.Windows.Data.Binding("VTId"), Width = 100 });
 
                 string query = "SELECT * FROM ThuocBVTV";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<Model.ThuocBVTV>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new Model.ThuocBVTV
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        NgaySX = Convert.ToDateTime(row["NgaySX"]),
-                        HanSD = Convert.ToDateTime(row["HanSD"]),
-                        VTId = Convert.ToInt32(row["VTId"])
-                    });
-                }
-
-                dgThuocBVTV.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgThuocBVTV.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Load Cơ sở sản xuất thuốc BVTV
         public void LoadCoSoSanXuat()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "CoSoSanXuatThuocBVTV";
                 txtTitle.Text = "Cơ sở sản xuất thuốc BVTV";
+                txtSearch.Text = "";
+                
+                dgThuocBVTV.ItemsSource = null;
 
                 dgThuocBVTV.Columns.Clear();
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -75,37 +72,29 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "Loại ID", Binding = new System.Windows.Data.Binding("LoaiId"), Width = 80 });
 
                 string query = "SELECT * FROM CoSoSanXuatThuocBVTV";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<CoSoSanXuatThuocBVTV>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new CoSoSanXuatThuocBVTV
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"]),
-                        LoaiId = Convert.ToInt32(row["LoaiId"])
-                    });
-                }
-
-                dgThuocBVTV.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgThuocBVTV.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Load Cơ sở bán thuốc BVTV
         public void LoadCoSoBan()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "CoSoBanThuocBVTV";
                 txtTitle.Text = "Cơ sở bán thuốc BVTV";
+                txtSearch.Text = "";
+                
+                dgThuocBVTV.ItemsSource = null;
 
                 dgThuocBVTV.Columns.Clear();
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -115,26 +104,15 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
                 dgThuocBVTV.Columns.Add(new DataGridTextColumn { Header = "Loại ID", Binding = new System.Windows.Data.Binding("LoaiId"), Width = 80 });
 
                 string query = "SELECT * FROM CoSoBanThuocBVTV";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<CoSoBanThuocBVTV>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new CoSoBanThuocBVTV
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"]),
-                        LoaiId = Convert.ToInt32(row["LoaiId"])
-                    });
-                }
-
-                dgThuocBVTV.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgThuocBVTV.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -145,7 +123,47 @@ namespace QuanLiTrongTrot.View.ThuocBVTV
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // TODO: Implement search
+            if (_isLoading || _currentData == null) return;
+
+            string keyword = txtSearch.Text.ToLower().Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                _currentData.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                string filter = BuildRowFilter(keyword);
+                try
+                {
+                    _currentData.DefaultView.RowFilter = filter;
+                }
+                catch
+                {
+                    _currentData.DefaultView.RowFilter = "";
+                }
+            }
+
+            txtTongSo.Text = _currentData.DefaultView.Count.ToString();
+        }
+
+        private string BuildRowFilter(string keyword)
+        {
+            List<string> conditions = new List<string>();
+            
+            foreach (DataColumn col in _currentData.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+                else if (col.DataType == typeof(int) || col.DataType == typeof(double))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+            }
+
+            return string.Join(" OR ", conditions);
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)

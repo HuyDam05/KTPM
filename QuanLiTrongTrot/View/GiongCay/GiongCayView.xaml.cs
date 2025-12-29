@@ -2,23 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace QuanLiTrongTrot.View.GiongCay
 {
     public partial class GiongCayView : UserControl
     {
         private string _currentTable = "GiongCayChinh";
+        private DataTable _currentData;
+        private bool _isLoading = false;
 
         public GiongCayView()
         {
@@ -26,14 +19,18 @@ namespace QuanLiTrongTrot.View.GiongCay
             LoadGiongCayChinh();
         }
 
-        #region Load Data Methods - PUBLIC để MainWindow gọi được
+        #region Load Data Methods
 
         public void LoadGiongCayChinh()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "GiongCayChinh";
                 txtTitle.Text = "Danh sách Giống Cây Trồng Chính";
+                txtSearch.Text = "";
+                
+                dgGiongCay.ItemsSource = null;
 
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -43,26 +40,15 @@ namespace QuanLiTrongTrot.View.GiongCay
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Sản lượng", Binding = new System.Windows.Data.Binding("SanLuong"), Width = 100 });
 
                 string query = "SELECT * FROM GiongCayChinh";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<GiongCayChinh>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new GiongCayChinh
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        PhanLoai = row["PhanLoai"].ToString(),
-                        MuaVu = row["MuaVu"].ToString(),
-                        SanLuong = Convert.ToInt32(row["SanLuong"])
-                    });
-                }
-
-                dgGiongCay.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgGiongCay.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -71,8 +57,12 @@ namespace QuanLiTrongTrot.View.GiongCay
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "GiongCayLuuHanh";
                 txtTitle.Text = "Danh sách Giống Cây Lưu Hành";
+                txtSearch.Text = "";
+                
+                dgGiongCay.ItemsSource = null;
 
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -82,26 +72,15 @@ namespace QuanLiTrongTrot.View.GiongCay
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Đặc điểm", Binding = new System.Windows.Data.Binding("DacDiem"), Width = 200 });
 
                 string query = "SELECT * FROM GiongCayLuuHanh";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<GiongCayLuuHanh>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new GiongCayLuuHanh
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        LoaiCay = row["LoaiCay"].ToString(),
-                        NoiPhoBien = row["NoiPhoBien"].ToString(),
-                        CongDung = row["CongDung"].ToString(),
-                        DacDiem = row["DacDiem"].ToString()
-                    });
-                }
-
-                dgGiongCay.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgGiongCay.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -110,8 +89,12 @@ namespace QuanLiTrongTrot.View.GiongCay
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "GiongCayDauDong";
                 txtTitle.Text = "Danh sách Giống Cây Đầu Dòng";
+                txtSearch.Text = "";
+                
+                dgGiongCay.ItemsSource = null;
 
                 dgGiongCay.Columns.Clear();
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -123,29 +106,32 @@ namespace QuanLiTrongTrot.View.GiongCay
                 dgGiongCay.Columns.Add(new DataGridTextColumn { Header = "Vùng trồng ID", Binding = new System.Windows.Data.Binding("VTId"), Width = 100 });
 
                 string query = "SELECT * FROM GiongCayDauDong";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<GiongCayDauDong>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new GiongCayDauDong
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        NguonGoc = row["NguonGoc"].ToString(),
-                        DacTinh = row["DacTinh"].ToString(),
-                        ThoiGianThuHoach = Convert.ToInt32(row["ThoiGianThuHoach"]),
-                        GiongId = Convert.ToInt32(row["GiongId"]),
-                        VTId = Convert.ToInt32(row["VTId"])
-                    });
-                }
-
-                dgGiongCay.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgGiongCay.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ReloadCurrentData()
+        {
+            switch (_currentTable)
+            {
+                case "GiongCayChinh":
+                    LoadGiongCayChinh();
+                    break;
+                case "GiongCayLuuHanh":
+                    LoadGiongCayLuuHanh();
+                    break;
+                case "GiongCayDauDong":
+                    LoadGiongCayDauDong();
+                    break;
             }
         }
 
@@ -155,12 +141,147 @@ namespace QuanLiTrongTrot.View.GiongCay
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // TODO: Implement search
+            if (_isLoading || _currentData == null) return;
+
+            string keyword = txtSearch.Text.ToLower().Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                _currentData.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                string filter = BuildRowFilter(keyword);
+                try
+                {
+                    _currentData.DefaultView.RowFilter = filter;
+                }
+                catch
+                {
+                    _currentData.DefaultView.RowFilter = "";
+                }
+            }
+
+            txtTongSo.Text = _currentData.DefaultView.Count.ToString();
+        }
+
+        private string BuildRowFilter(string keyword)
+        {
+            List<string> conditions = new List<string>();
+            
+            foreach (DataColumn col in _currentData.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+                else if (col.DataType == typeof(int) || col.DataType == typeof(double))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+            }
+
+            return string.Join(" OR ", conditions);
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Thêm mới vào bảng: {_currentTable}", "Thông báo");
+            switch (_currentTable)
+            {
+                case "GiongCayDauDong":
+                    var addWindow = new AddGiongCayWindow();
+                    if (addWindow.ShowDialog() == true)
+                    {
+                        LoadGiongCayDauDong();
+                    }
+                    break;
+                    
+                case "GiongCayChinh":
+                    MessageBox.Show("Chức năng thêm Giống Cây Chính đang phát triển!", "Thông báo");
+                    break;
+                    
+                case "GiongCayLuuHanh":
+                    MessageBox.Show("Chức năng thêm Giống Cây Lưu Hành đang phát triển!", "Thông báo");
+                    break;
+            }
+        }
+
+        private void dgGiongCay_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (_currentTable == "GiongCayDauDong" && dgGiongCay.SelectedItem != null)
+            {
+                var selectedRow = dgGiongCay.SelectedItem as DataRowView;
+                if (selectedRow != null)
+                {
+                    var editWindow = new AddGiongCayWindow(selectedRow);
+                    if (editWindow.ShowDialog() == true)
+                    {
+                        LoadGiongCayDauDong();
+                    }
+                }
+            }
+        }
+
+        private void BtnXoa_Click(object sender, RoutedEventArgs e)
+        {
+            // Kiểm tra xem có dòng nào được chọn không
+            if (dgGiongCay.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa!", "Thông báo", 
+                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var selectedRow = dgGiongCay.SelectedItem as DataRowView;
+            if (selectedRow == null) return;
+
+            int id = Convert.ToInt32(selectedRow["Id"]);
+            string tenHienThi = "";
+
+            // Lấy tên hiển thị tùy theo bảng
+            switch (_currentTable)
+            {
+                case "GiongCayChinh":
+                case "GiongCayDauDong":
+                    tenHienThi = selectedRow["Ten"].ToString();
+                    break;
+                case "GiongCayLuuHanh":
+                    tenHienThi = selectedRow["LoaiCay"].ToString();
+                    break;
+            }
+
+            // Xác nhận xóa
+            var result = MessageBox.Show(
+                $"Bạn có chắc muốn xóa \"{tenHienThi}\" (ID: {id})?\n\nThao tác này không thể hoàn tác!", 
+                "Xác nhận xóa", 
+                MessageBoxButton.YesNo, 
+                MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    string query = $"DELETE FROM {_currentTable} WHERE Id = {id}";
+                    int deleteResult = DataProvider.Instance.ExecuteNonQuery(query);
+
+                    if (deleteResult > 0)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông báo", 
+                                        MessageBoxButton.OK, MessageBoxImage.Information);
+                        ReloadCurrentData(); // Reload lại dữ liệu
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa dữ liệu!", "Lỗi", 
+                                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi xóa: {ex.Message}", "Lỗi", 
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         #endregion

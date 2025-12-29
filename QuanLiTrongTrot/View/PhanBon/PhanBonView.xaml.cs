@@ -10,6 +10,8 @@ namespace QuanLiTrongTrot.View.PhanBon
     public partial class PhanBonView : UserControl
     {
         private string _currentTable = "PhanBon";
+        private DataTable _currentData;
+        private bool _isLoading = false;
 
         public PhanBonView()
         {
@@ -19,13 +21,16 @@ namespace QuanLiTrongTrot.View.PhanBon
 
         #region Load Data Methods
 
-        // Load Danh sách phân bón
         public void LoadPhanBon()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "PhanBon";
                 txtTitle.Text = "Danh sách Phân Bón";
+                txtSearch.Text = "";
+                
+                dgPhanBon.ItemsSource = null;
 
                 dgPhanBon.Columns.Clear();
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -35,37 +40,29 @@ namespace QuanLiTrongTrot.View.PhanBon
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "Vùng trồng ID", Binding = new System.Windows.Data.Binding("VTId"), Width = 100 });
 
                 string query = "SELECT * FROM PhanBon";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<Model.PhanBon>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new Model.PhanBon
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        ThanhPhan = row["ThanhPhan"].ToString(),
-                        PhanLoai = row["PhanLoai"].ToString(),
-                        VTId = Convert.ToInt32(row["VTId"])
-                    });
-                }
-
-                dgPhanBon.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgPhanBon.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Load Cơ sở sản xuất phân bón
         public void LoadCoSoSanXuat()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "CoSoSanXuatPhanBon";
                 txtTitle.Text = "Cơ sở sản xuất phân bón";
+                txtSearch.Text = "";
+                
+                dgPhanBon.ItemsSource = null;
 
                 dgPhanBon.Columns.Clear();
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -75,37 +72,29 @@ namespace QuanLiTrongTrot.View.PhanBon
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "Loại ID", Binding = new System.Windows.Data.Binding("LoaiId"), Width = 80 });
 
                 string query = "SELECT * FROM CoSoSanXuatPhanBon";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<CoSoSanXuatPhanBon>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new CoSoSanXuatPhanBon
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"]),
-                        LoaiId = Convert.ToInt32(row["LoaiId"])
-                    });
-                }
-
-                dgPhanBon.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgPhanBon.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Load Cơ sở bán phân bón
         public void LoadCoSoBan()
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "CoSoBanPhanBon";
                 txtTitle.Text = "Cơ sở bán phân bón";
+                txtSearch.Text = "";
+                
+                dgPhanBon.ItemsSource = null;
 
                 dgPhanBon.Columns.Clear();
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
@@ -115,26 +104,15 @@ namespace QuanLiTrongTrot.View.PhanBon
                 dgPhanBon.Columns.Add(new DataGridTextColumn { Header = "Loại ID", Binding = new System.Windows.Data.Binding("LoaiId"), Width = 80 });
 
                 string query = "SELECT * FROM CoSoBanPhanBon";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                var list = new List<CoSoBanPhanBon>();
-                foreach (DataRow row in data.Rows)
-                {
-                    list.Add(new CoSoBanPhanBon
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"]),
-                        LoaiId = Convert.ToInt32(row["LoaiId"])
-                    });
-                }
-
-                dgPhanBon.ItemsSource = list;
-                txtTongSo.Text = list.Count.ToString();
+                dgPhanBon.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -145,7 +123,47 @@ namespace QuanLiTrongTrot.View.PhanBon
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // TODO: Implement search
+            if (_isLoading || _currentData == null) return;
+
+            string keyword = txtSearch.Text.ToLower().Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                _currentData.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                string filter = BuildRowFilter(keyword);
+                try
+                {
+                    _currentData.DefaultView.RowFilter = filter;
+                }
+                catch
+                {
+                    _currentData.DefaultView.RowFilter = "";
+                }
+            }
+
+            txtTongSo.Text = _currentData.DefaultView.Count.ToString();
+        }
+
+        private string BuildRowFilter(string keyword)
+        {
+            List<string> conditions = new List<string>();
+            
+            foreach (DataColumn col in _currentData.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+                else if (col.DataType == typeof(int) || col.DataType == typeof(double))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+            }
+
+            return string.Join(" OR ", conditions);
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)

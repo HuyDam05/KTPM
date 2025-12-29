@@ -62,6 +62,7 @@
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\GiongCay.cs" />
     <Compile Include="Model\PhanBon.cs" />
+    <Compile Include="Model\SinhVatGayHai.cs" />
     <Compile Include="Model\ThuocBVTV.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\VungTrong.cs" />
@@ -70,11 +71,17 @@
     <Compile Include="View\CoSoSanXuat\CoSoSanXuatView.xaml.cs">
       <DependentUpon>CoSoSanXuatView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\GiongCay\AddGiongCayWindow.xaml.cs">
+      <DependentUpon>AddGiongCayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GiongCay\GiongCayView.xaml.cs">
       <DependentUpon>GiongCayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PhanBon\PhanBonView.xaml.cs">
       <DependentUpon>PhanBonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SinhVatGayHai\SinhVatGayHaiView.xaml.cs">
+      <DependentUpon>SinhVatGayHaiView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThuocBVTV\ThuocBVTVView.xaml.cs">
       <DependentUpon>ThuocBVTVView.xaml</DependentUpon>
@@ -104,11 +111,17 @@
     <Page Include="View\CoSoSanXuat\CoSoSanXuatView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\GiongCay\AddGiongCayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\GiongCay\GiongCayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PhanBon\PhanBonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SinhVatGayHai\SinhVatGayHaiView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ThuocBVTV\ThuocBVTVView.xaml">

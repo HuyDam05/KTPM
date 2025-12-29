@@ -10,7 +10,8 @@ namespace QuanLiTrongTrot.View.VungTrong
     public partial class VungTrongView : UserControl
     {
         private string _currentTable = "VungTrong";
-        private List<Model.VungTrong> _listVungTrong;
+        private DataTable _currentData;
+        private bool _isLoading = false;
 
         public VungTrongView()
         {
@@ -24,43 +25,31 @@ namespace QuanLiTrongTrot.View.VungTrong
         {
             try
             {
+                _isLoading = true;
                 _currentTable = "VungTrong";
                 txtTitle.Text = "Danh mục Vùng Trồng";
+                txtSearch.Text = "";
+
+                dgVungTrong.ItemsSource = null;
 
                 dgVungTrong.Columns.Clear();
                 dgVungTrong.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("Id"), Width = 50 });
-                dgVungTrong.Columns.Add(new DataGridTextColumn { Header = "Tên vùng trồng", Binding = new System.Windows.Data.Binding("Ten"), Width = 250 });
+                dgVungTrong.Columns.Add(new DataGridTextColumn { Header = "Quy mô (m²)", Binding = new System.Windows.Data.Binding("QuyMo"), Width = 150 });
                 dgVungTrong.Columns.Add(new DataGridTextColumn { Header = "Địa chỉ", Binding = new System.Windows.Data.Binding("DiaChi"), Width = 300 });
                 dgVungTrong.Columns.Add(new DataGridTextColumn { Header = "Bản đồ ID", Binding = new System.Windows.Data.Binding("BanDoId"), Width = 100 });
 
                 string query = "SELECT * FROM VungTrong";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                _currentData = DataProvider.Instance.ExecuteQuery(query);
 
-                _listVungTrong = new List<Model.VungTrong>();
-                foreach (DataRow row in data.Rows)
-                {
-                    _listVungTrong.Add(new Model.VungTrong
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Ten = row["Ten"].ToString(),
-                        DiaChi = row["DiaChi"].ToString(),
-                        BanDoId = Convert.ToInt32(row["BanDoId"])
-                    });
-                }
-
-                dgVungTrong.ItemsSource = _listVungTrong;
-                txtTongSo.Text = _listVungTrong.Count.ToString();
+                dgVungTrong.ItemsSource = _currentData.DefaultView;
+                txtTongSo.Text = _currentData.Rows.Count.ToString();
+                _isLoading = false;
             }
             catch (Exception ex)
             {
+                _isLoading = false;
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        public void TimKiemVungTrong()
-        {
-            txtTitle.Text = "Tìm kiếm thông tin Vùng Trồng";
-            txtSearch.Focus();
         }
 
         #endregion
@@ -69,22 +58,47 @@ namespace QuanLiTrongTrot.View.VungTrong
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (_listVungTrong == null) return;
+            if (_isLoading || _currentData == null) return;
 
-            string keyword = txtSearch.Text.ToLower();
+            string keyword = txtSearch.Text.ToLower().Trim();
 
             if (string.IsNullOrEmpty(keyword))
             {
-                dgVungTrong.ItemsSource = _listVungTrong;
+                _currentData.DefaultView.RowFilter = "";
             }
             else
             {
-                var filtered = _listVungTrong.FindAll(v =>
-                    v.Ten.ToLower().Contains(keyword) ||
-                    v.DiaChi.ToLower().Contains(keyword));
-                dgVungTrong.ItemsSource = filtered;
+                string filter = BuildRowFilter(keyword);
+                try
+                {
+                    _currentData.DefaultView.RowFilter = filter;
+                }
+                catch
+                {
+                    _currentData.DefaultView.RowFilter = "";
+                }
             }
-            txtTongSo.Text = ((List<Model.VungTrong>)dgVungTrong.ItemsSource).Count.ToString();
+
+            txtTongSo.Text = _currentData.DefaultView.Count.ToString();
+        }
+
+        private string BuildRowFilter(string keyword)
+        {
+            List<string> conditions = new List<string>();
+            
+            foreach (DataColumn col in _currentData.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+                else if (col.DataType == typeof(int) || col.DataType == typeof(double))
+                {
+                    conditions.Add($"CONVERT([{col.ColumnName}], 'System.String') LIKE '%{keyword}%'");
+                }
+            }
+
+            return string.Join(" OR ", conditions);
         }
 
         private void BtnThemMoi_Click(object sender, RoutedEventArgs e)

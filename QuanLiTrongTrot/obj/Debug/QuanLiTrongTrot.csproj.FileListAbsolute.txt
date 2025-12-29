@@ -29,3 +29,7 @@ E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\CoSoSanXuat\Co
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\VungTrong\VungTrongView.baml
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\CoSoSanXuat\CoSoSanXuatView.g.cs
 E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\VungTrong\VungTrongView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\SinhVatGayHai\SinhVatGayHaiView.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\SinhVatGayHai\SinhVatGayHaiView.g.cs
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\GiongCay\AddGiongCayWindow.baml
+E:\QuanLiTrongTrot\QuanLiTrongTrot\QuanLiTrongTrot\obj\Debug\View\GiongCay\AddGiongCayWindow.g.cs
