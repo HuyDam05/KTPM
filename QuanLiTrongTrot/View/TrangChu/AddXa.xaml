@@ -1,0 +1,64 @@
+﻿<Window x:Class="QuanLiTrongTrot.View.TrangChu.AddXaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Xã Information"
+        Height="420" Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#F5F5F5">
+
+    <Border Background="White" Margin="20" CornerRadius="10" Padding="25">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" Color="#CCCCCC" ShadowDepth="2"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Thông tin Xã"
+                       FontSize="22" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,0,0,20"
+                       Foreground="#333"/>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <StackPanel Margin="0,0,0,12">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tên xã" Foreground="#6B5B95" FontWeight="SemiBold"/>
+                            <TextBlock Text=" *" Foreground="Red"/>
+                        </StackPanel>
+                        <TextBox x:Name="txtTenXa" Height="35" Padding="10,8" FontSize="14"
+                                 BorderBrush="#DDD" BorderThickness="1" Margin="0,5,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,12">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tỉnh" Foreground="#6B5B95" FontWeight="SemiBold"/>
+                            <TextBlock Text=" *" Foreground="Red"/>
+                        </StackPanel>
+                        <TextBox x:Name="txtTinh" Height="35" Padding="10,8" FontSize="14"
+                                 BorderBrush="#DDD" BorderThickness="1" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button x:Name="btnXacNhan" Content="Xác nhận"
+                        Background="#4CAF50" Foreground="White"
+                        Width="100" Height="35" Margin="0,0,10,0"
+                        FontSize="14" Cursor="Hand" BorderThickness="0"
+                        Click="BtnLuu_Click"/>
+
+                <Button x:Name="btnHuy" Content="Hủy"
+                        Background="#9E9E9E" Foreground="White"
+                        Width="100" Height="35"
+                        FontSize="14" Cursor="Hand" BorderThickness="0"
+                        Click="BtnHuy_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

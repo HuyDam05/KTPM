@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09643D50-7168-4B00-9358-4D7733A56662}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLiTrongTrot</RootNamespace>
+    <AssemblyName>QuanLiTrongTrot</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ChangePasswordWindow.xaml.cs">
+      <DependentUpon>ChangePasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoSoSanXuat.cs" />
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\GiongCay.cs" />
+    <Compile Include="Model\PhanBon.cs" />
+    <Compile Include="Model\SinhVatGayHai.cs" />
+    <Compile Include="Model\ThuocBVTV.cs" />
+    <Compile Include="Model\Tinh.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\VungTrong.cs" />
+    <Compile Include="Model\WeatherResponse.cs" />
+    <Compile Include="Regproblems.xaml.cs">
+      <DependentUpon>Regproblems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\WeatherService.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\WeatherViewModel.cs" />
+    <Compile Include="View\CoSoSanXuat\AddCoSoVietGapWindow.xaml.cs">
+      <DependentUpon>AddCoSoVietGapWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CoSoSanXuat\CoSoVietGapView.xaml.cs">
+      <DependentUpon>CoSoVietGapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GiongCay\AddGiongCayChinhWindow.xaml.cs">
+      <DependentUpon>AddGiongCayChinhWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GiongCay\AddGiongCayLuuHanhWindow.xaml.cs">
+      <DependentUpon>AddGiongCayLuuHanhWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GiongCay\AddGiongCayWindow.xaml.cs">
+      <DependentUpon>AddGiongCayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GiongCay\GiongCayView.xaml.cs">
+      <DependentUpon>GiongCayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanBon\AddCoSoBanPhanBonWindow.xaml.cs">
+      <DependentUpon>AddCoSoBanPhanBonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanBon\AddCoSoSanXuatPhanBonWindow.xaml.cs">
+      <DependentUpon>AddCoSoSanXuatPhanBonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanBon\AddPhanBonWindow.xaml.cs">
+      <DependentUpon>AddPhanBonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanBon\PhanBonView.xaml.cs">
+      <DependentUpon>PhanBonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SinhVatGayHai\AddCapNhatSVGHWindow.xaml.cs">
+      <DependentUpon>AddCapNhatSVGHWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SinhVatGayHai\AddSinhVatGayHaiWindow.xaml.cs">
+      <DependentUpon>AddSinhVatGayHaiWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SinhVatGayHai\AddTuoiSauWindow.xaml.cs">
+      <DependentUpon>AddTuoiSauWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SinhVatGayHai\SinhVatGayHaiView.xaml.cs">
+      <DependentUpon>SinhVatGayHaiView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuocBVTV\AddCoSoBanThuocWindow.xaml.cs">
+      <DependentUpon>AddCoSoBanThuocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuocBVTV\AddCoSoSanXuatThuocWindow.xaml.cs">
+      <DependentUpon>AddCoSoSanXuatThuocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuocBVTV\AddThuocBVTVWindow.xaml.cs">
+      <DependentUpon>AddThuocBVTVWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuocBVTV\ThuocBVTVView.xaml.cs">
+      <DependentUpon>ThuocBVTVView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrangChu\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrangChu\AddXa.xaml.cs">
+      <DependentUpon>AddXa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrangChu\Trangchu.xaml.cs">
+      <DependentUpon>Trangchu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrangChu\TrangchuView.xaml.cs">
+      <DependentUpon>TrangchuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VungTrong\AddVungTrongWindow.xaml.cs">
+      <DependentUpon>AddVungTrongWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VungTrong\VungTrongView.xaml.cs">
+      <DependentUpon>VungTrongView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChangePasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Regproblems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CoSoSanXuat\AddCoSoVietGapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CoSoSanXuat\CoSoVietGapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GiongCay\AddGiongCayChinhWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GiongCay\AddGiongCayLuuHanhWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GiongCay\AddGiongCayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GiongCay\GiongCayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhanBon\AddCoSoBanPhanBonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhanBon\AddCoSoSanXuatPhanBonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhanBon\AddPhanBonWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PhanBon\PhanBonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SinhVatGayHai\AddCapNhatSVGHWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SinhVatGayHai\AddSinhVatGayHaiWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SinhVatGayHai\AddTuoiSauWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SinhVatGayHai\SinhVatGayHaiView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuocBVTV\AddCoSoBanThuocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuocBVTV\AddCoSoSanXuatThuocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuocBVTV\AddThuocBVTVWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuocBVTV\ThuocBVTVView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrangChu\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrangChu\AddXa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrangChu\Trangchu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrangChu\TrangchuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VungTrong\AddVungTrongWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VungTrong\VungTrongView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

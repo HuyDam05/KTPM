@@ -1,0 +1,109 @@
+﻿<Window x:Class="QuanLiTrongTrot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLiTrongTrot"
+        mc:Ignorable="d"
+        Title="KTPM - Ứng dụng quản lý trồng trọt" 
+        Height="650" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Menu Tabs -->
+            <RowDefinition Height="*"/>
+            <!-- Content -->
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Border Grid.Row="0" Background="#2E7D32" Padding="15,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo và tên ứng dụng -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="KTPM-PROVJP" FontSize="20" FontWeight="Bold" 
+                               Foreground="White" VerticalAlignment="Center"/>
+                    <TextBlock Text="  Ứng dụng quản lý trồng trọt" FontSize="12" 
+                               Foreground="#B8E6B8" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <!-- Nút Đăng xuất -->
+                <Button Grid.Column="2" Content="Đăng xuất" 
+                        Background="#C62828" Foreground="White"
+                        Padding="15,8" FontSize="12"
+                        BorderThickness="0" Cursor="Hand"
+                        Click="btnLogout_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- MENU TABS (Thanh menu ngang) -->
+        <Border Grid.Row="1" Background="#F5F5F5" BorderBrush="#DDD" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" Margin="10,5">
+                <Button Content="Trang chủ" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="TrangChu"/>
+                <Button Content="Phân Bón" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="PhanBon"/>
+                <Button Content="Thuốc BVTV" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="ThuocBVTV"/>
+                <Button Content="Vùng Trồng" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="VungTrong"/>
+                <Button Content="Cơ Sở Sản Xuất" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="CoSoSanXuat"/>
+                <Button Content="Giống cây" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="GiongCay"/>
+                <Button Content="Sinh Vật Gây Hại" Style="{StaticResource MenuTabStyle}" Click="MenuTab_Click" Tag="SinhVatGayHai"/>
+            </StackPanel>
+        </Border>
+
+        <!-- CONTENT AREA -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <!-- Sidebar -->
+                <ColumnDefinition Width="*"/>
+                <!-- Main Content -->
+            </Grid.ColumnDefinitions>
+
+            <!-- SIDEBAR (Menu trái) -->
+            <Border Grid.Column="0" Background="#FAFAFA" BorderBrush="#E0E0E0" BorderThickness="0,0,1,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="SidebarContent" Margin="0,10">
+
+                            <!-- Nhóm: Người dùng -->
+                        <TextBlock Text="Người dùng" FontWeight="Bold" FontSize="14" 
+                                   Foreground="#333" Margin="15,10,15,5"/>
+                        <Button Content="Quản lý người dùng" Style="{StaticResource SidebarButtonStyle}" 
+                                Click="btnQuanliuser" Tag="QuanLyNguoiDung"/>
+
+                        <!-- Nhóm: Hành chính -->
+                        <TextBlock Text="Hành chính" FontWeight="Bold" FontSize="14" 
+                                   Foreground="#333" Margin="15,20,15,5"/>
+                        <Button Content="Quản lý hành chính" Style="{StaticResource SidebarButtonStyle}" 
+                                Click="btnQuanliHanhChinh" Tag="QuanLyHanhChinh"/>
+
+                        <!-- Nhóm: Profile -->
+                        <TextBlock Text="Profile" FontWeight="Bold" FontSize="14" 
+                                   Foreground="#333" Margin="15,20,15,5"/>
+                        <Button Content="Đổi mật khẩu" Style="{StaticResource SidebarButtonStyle}" 
+                                Click="Sidebar_Click" Tag="DoiMatKhau"/>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- MAIN CONTENT -->
+            <Border Grid.Column="1" Background="White" Margin="10">
+                <Grid x:Name="MainContent">
+                    <!-- Nội dung sẽ được load động vào đây -->
+                    <TextBlock x:Name="txtWelcome" Text="Chào mừng bạn đến với hệ thống!" 
+                               FontSize="24" Foreground="#666"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
